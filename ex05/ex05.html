@@ -1,17 +1,42 @@
 <!DOCTYPE html>
-<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>버튼 단계 표시</title>
-  <link rel="stylesheet" href="style.css">
+  <title>color button reveal</title>
+  <style>
+    .colorButton {
+      display: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      color: white;
+    }
+
+    #LightBlue { background-color: lightblue; color: black; display: inline-block; }
+    #Gold { background-color: gold; color: black; }
+    #GreenYellow { background-color: #39ff14; color: black; }
+    #Orange { background-color: orange; }
+  </style>
 </head>
-<body>
+<body>s
   <button class="colorButton" id="LightBlue">Light Blue</button>
   <button class="colorButton" id="Gold">Gold</button>
   <button class="colorButton" id="GreenYellow">Neon Green</button>
   <button class="colorButton" id="Orange">Orange</button>
 
-  <script src="script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const buttons = document.querySelectorAll(".colorButton");
+
+      buttons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+          if (buttons[index + 1]) {
+            buttons[index + 1].style.display = "inline-block";
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
