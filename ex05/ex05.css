@@ -1,0 +1,22 @@
+.colorButton {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 18px;
+  margin: 6px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s ease;
+  display: none;
+}
+
+#LightBlue { background-color: #5bc0de; display: inline-block; }
+#Gold { background-color: #f1c40f; color: black; }
+#GreenYellow { background-color: #39ff14; color: black; }
+#Orange { background-color: #ff7f0f; }
+
+.colorButton:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
